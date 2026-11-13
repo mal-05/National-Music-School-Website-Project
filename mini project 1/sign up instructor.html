@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The National Music School</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img src="logo.png" alt="Logo of the National Music School" class="logo" height="100" width="100">
+        <h1>The National Music School</h1>
+    </header>
+
+    <table border="2" cellpadding="10" cellspacing="5">
+    <thead>
+        <tr>
+            <th>Class Category</th>
+            <th>Group Classes</th>
+            <th>Private Classes</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <th rowspan="3">Instrument Classes</th>
+            <td>
+                <strong>Group Instrument Lessons</strong><br>
+                <em>Max 6 students per class</em><br>
+                60 mins / week
+            </td>
+            <td>
+                <strong>1-on-1 Private Lessons</strong><br>
+                <em>Personalized pacing & curriculum</em><br>
+                30, 45, or 60 mins
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Beginner Ensemble</strong><br>
+                <em>Learn to play with others</em><br>
+                45 mins / week 
+            </td>
+            <td>
+                <strong>Advanced Masterclass Prep</strong><br>
+                <em>Audition and competition focused</em><br>
+                60 mins
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Rock Band / Jazz Combo</strong><br>
+                <em>For intermediate+ players</em><br>
+                90 mins / week
+            </td>
+            <td>
+                <strong>Flexible Private Scheduling</strong><br>
+                <em>Book as you go (no monthly commitment)</em><br>
+                Varies 
+            </td>
+        </tr>
+
+        <tr>
+            <th rowspan="2">Music Theory Classes</th>
+            <td>
+                <strong>Theory Fundamentals</strong><br>
+                <em>Reading music, rhythm, and basic scales</em><br>
+                45 mins / week 
+            </td>
+            <td>
+                <strong>Private Theory Tutoring</strong><br>
+                <em>Targeted help for school or exams</em><br>
+                45 mins
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Advanced AP Theory Prep</strong><br>
+                <em>Harmony, counterpoint, and ear training</em><br>
+                60 mins / week 
+            </td>
+            <td>
+                <strong>Composition & Songwriting</strong><br>
+                <em>Private mentorship in writing your own music</em><br>
+                60 mins
+            </td>
+        </tr>
+
+        <tr>
+            <th rowspan="2">Music History Classes</th>
+            <td>
+                <strong>Survey of Music History</strong><br>
+                <em>From Medieval to Modern eras</em><br>
+                60 mins / week
+            </td>
+            <td>
+                <strong>Private Musicology Tutoring</strong><br>
+                <em>Deep dives into specific eras or composers</em><br>
+                60 mins 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>History of Pop & Rock</strong><br>
+                <em>20th-century popular music evolution</em><br>
+                60 mins / week
+            </td>
+            <td>
+                <strong>College/University Prep</strong><br>
+                <em>Research papers and exam preparation</em><br>
+                60 mins 
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<section id="sign-up">
+        <h2>Instructor Application</h2>
+        <p>Join our team of passionate instructors and share your love for music with students of all ages. Fill out the form below to apply.</p>
+        
+        <form action="application" method="post">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="password">Create a Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <fieldset>
+                <legend>What is your teaching experience level?</legend>
+                <input type="radio" id="beginner" name="experience" value="beginner" required>
+                <label for="beginner">Beginner (1-2 years)</label><br>
+                
+                <input type="radio" id="intermediate" name="experience" value="intermediate">
+                <label for="intermediate">Intermediate (3-5 years)</label><br>
+                
+                <input type="radio" id="professional" name="experience" value="professional">
+                <label for="professional">Professional (5+ years)</label>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Which instruments do you teach? (Select all that apply)</legend>
+
+                <input type="checkbox" id="guitar" name="instruments[]" value="guitar">
+                <label for="guitar">Guitar</label>
+                
+                <input type="checkbox" id="violin" name="instruments[]" value="violin">
+                <label for="violin">Violin</label>
+                
+                <input type="checkbox" id="cello" name="instruments[]" value="cello">
+                <label for="cello">Cello</label>
+                
+                <input type="checkbox" id="ukulele" name="instruments[]" value="ukulele">
+                <label for="ukulele">Ukulele</label>
+                
+                <input type="checkbox" id="harp" name="instruments[]" value="harp">
+                <label for="harp">Harp</label><br><br>
+                
+                <input type="checkbox" id="piano" name="instruments[]" value="piano">
+                <label for="piano">Piano</label>
+                
+                <input type="checkbox" id="synthesizer" name="instruments[]" value="synthesizer">
+                <label for="synthesizer">Synthesizer</label><br><br>
+                
+                <input type="checkbox" id="flute" name="instruments[]" value="flute">
+                <label for="flute">Flute</label>
+                
+                <input type="checkbox" id="saxophone" name="instruments[]" value="saxophone">
+                <label for="saxophone">Saxophone</label>
+                
+                <input type="checkbox" id="trumpet" name="instruments[]" value="trumpet">
+                <label for="trumpet">Trumpet</label>
+                
+                <input type="checkbox" id="clarinet" name="instruments[]" value="clarinet">
+                <label for="clarinet">Clarinet</label>
+                
+                <input type="checkbox" id="harmonica" name="instruments[]" value="harmonica">
+                <label for="harmonica">Harmonica</label><br><br>
+
+                <input type="checkbox" id="drums" name="instruments[]" value="drums">
+                <label for="drums">Drums</label>
+
+                <input type="checkbox" id="singing" name="instruments[]" value="singing">
+                <label for="singing">Singing / Voice</label>
+            </fieldset><br>
+
+            <label for="start-date">Earliest Date You Can Start:</label>
+            <input type="date" id="start-date" name="start-date" required><br><br>
+
+            <label for="genre">Preferred Genres to Teach:</label>
+            <select id="genre" name="genre" required>
+                <option value="" disabled selected>Select a genre...</option>
+                <optgroup label="Classical & Traditional">
+                    <option value="classical-orchestral">Classical & Orchestral</option>
+                    <option value="folk-acoustic">Folk & Acoustic</option>
+                </optgroup>
+                <optgroup label="Popular & Modern">
+                    <option value="rock-pop-indie">Rock, Pop & Indie</option>
+                    <option value="contemporary-rnb">Contemporary & R&B</option>
+                </optgroup>
+                <optgroup label="Roots & Rhythm">
+                    <option value="jazz-blues">Jazz & Blues</option>
+                    <option value="funk-soul">Funk, Soul & More</option>
+                </optgroup>
+                <optgroup label="Other">
+                    <option value="other">Other</option>
+                </optgroup>
+            </select><br><br>
+
+            <label for="hire-reason">Why should we hire you?</label><br>
+            <textarea id="hire-reason" name="hire-reason" rows="5" cols="50" placeholder="Tell us about your teaching philosophy, performance background, and what makes you a great fit for our school..." required></textarea><br><br>
+
+            <input type="submit" value="Apply Now">
+            <input type="reset" value="Reset Form">
+        </form>
+    </section>
+    <footer id="contact">
+        <p>Contact us by calling: +20 1 234 567 890</p>
+        <p>or by sending us an email:</p>
+        <form class="email-form" action="mailto:nationalmusicschool@edu.com" method="post">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+            
+            <div class="form-buttons">
+                <input type="submit" value="Send">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </footer> 
+</body>
+</html>
