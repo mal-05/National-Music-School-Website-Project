@@ -1,0 +1,773 @@
+:root {
+    --red: #9e2a2b;
+    --yellow: #f2b134;
+    --yellow-light: #fdf6e3;
+    --bg: #f4ede1;
+    --red-orange: #d35400;
+    --green: #6b8e4e;
+    --dark-blue: #1b2340;
+    --dark-blue-light: #32406b;
+    --purple: #6a2c91;
+    --lighter-purple: #a259c4;
+    --shadow: 0 4px 16px rgba(27, 35, 64, 0.1);
+    --shadow-hover: 0 8px 28px rgba(27, 35, 64, 0.2);
+}
+
+html {scroll-padding-top: 120px;}
+
+body {
+    background-color: var(--bg);
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--dark-blue);
+}
+
+/* ---------- Header ---------- */
+
+header {
+  background: var(--dark-blue);
+  color:white;
+  display: flex;
+  padding: 1rem 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0.5rem;
+  z-index: 100;
+}
+
+.logo {
+    border-radius: 50%;
+    background: white;
+    padding: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+header h1 {
+  padding-left: 1.5rem;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  align-items: center;
+  list-style: none;
+  padding-left: 20rem;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+nav a:visited { color: white; }
+nav a:hover   { color: white; text-decoration: underline; }
+nav a:active  { color: var(--dark-blue-light); }
+
+/* ---------- Main ---------- */
+
+main {
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+section {
+    background: white;;
+    padding: 2.2rem 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow);
+    border-radius: 15px;
+    border-top: 10px solid var(--red-orange);
+    color: var(--dark-blue);
+    font-size: 18px;
+}
+section a:link    { color: var(--purple); }
+section a:visited { color: var(--purple); }
+section a:hover   { color: var(--lighter-purple); }
+
+section:nth-child(even) {
+    border-top-color: var(--green);
+}
+section h2 { color: var(--purple); }
+section h3 { color: var(--lighter-purple); }
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  list-style: none;
+  gap: 1rem;
+}
+
+.list li {
+  padding: 0.45rem 0.75rem 0.45rem 1.5rem;
+  position: relative;
+  background: rgba(226, 176, 74, 0.10);
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.list li::before {
+  content: "♪";
+  position: absolute;
+  left: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  font-size: 20px;
+}
+
+/* ---------- Events Section Layout ---------- */
+.event-layout {
+    display: flex;
+    gap: 2rem; 
+    align-items: flex-start; 
+    margin-top: 1.5rem;
+}
+
+.event-sidebar {
+    flex: 0 0 350px; 
+}
+
+.event-sidebar figure {
+    margin: 0;
+}
+
+.event-sidebar img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.event-sidebar figcaption {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--dark-blue-light);
+     text-align: center;
+}
+
+.event-sidebar figcaption h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+     text-align: center;
+}
+
+.event-text-content {
+    flex: 1; 
+}
+
+.event-text-content h2 {
+    margin-top: 0; 
+}
+
+.event-video {
+    margin-top: 1.5rem;
+    padding-top: 2rem;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.event-video video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.event-video figcaption {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--dark-blue-light);
+    text-align: center;
+}
+
+/* --- Base Card Styling --- */
+.cards {
+  display: inline-block;
+  vertical-align: top;
+  background: white;
+  border-radius: 16px;
+  padding: 0;
+  margin: 0.6rem 0.8rem 1.5rem 0;
+  width: calc(25% - 1.05rem);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+  transition: transform var(--transition, 0.3s ease), box-shadow var(--transition, 0.3s ease);
+}
+
+.cards:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.instructors img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 0;
+  border: none;
+  margin: 0;
+}
+.instructors h3,
+.instructors p {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.instructors h3 {
+  margin: 1rem 0 0.5rem 0;
+  color: var(--purple, #6a2c91);
+  font-size: 1.4rem;
+}
+
+.instructors .role {
+  color: #444;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: none; 
+  letter-spacing: 0;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  align-items: center;
+  text-align: center;
+}
+
+.instructors > p:last-child {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* --- Sign Up Cards--- */
+
+#sign-up {
+    text-align: center;
+}
+
+#sign-up .cards {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem; 
+    vertical-align: top;
+}
+
+#sign-up .cards h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: var(--purple);
+}
+
+#sign-up .cards p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem; 
+}
+
+#sign-up .cards a {
+    margin-top: auto;
+    align-self: center;
+    background-color: var(--lighter-purple);
+    color: white !important;
+    text-decoration: none !important;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(162, 89, 196, 0.2);
+}
+
+#sign-up .cards a:hover {
+    background-color: var(--purple);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(106, 44, 145, 0.3);
+}
+
+#sign-up .cards a:active {
+    transform: translateY(0);
+}
+
+/* --- music player --- */
+figure:has(audio) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    max-width: 600px;
+    margin: 3rem auto 2rem;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border-top: 10px solid var(--purple);
+}
+
+figure:has(audio) audio {
+    width: 100%;
+    max-width: 450px;
+    outline: none;
+    border-radius: 50px;
+}
+
+figure:has(audio) figcaption {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--purple);
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* --- Sign Up Pages --- */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 1100px;
+    margin: 2rem auto;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    font-size: 16px;
+    border: none;
+}
+
+table th,
+table td {
+    border: 1px solid #e6dfd3;
+    padding: 0.85rem 1rem;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+table thead th {
+    background: var(--dark-blue);
+    color: white;
+    font-size: 1.05rem;
+    letter-spacing: 0.3px;
+    text-align: center;
+}
+
+table tbody th {
+    background: var(--yellow-light);
+    color: var(--purple);
+    font-size: 1rem;
+    width: 18%;
+}
+
+table tbody tr:nth-child(even) td {
+    background: #faf7f0;
+}
+
+table tbody tr:hover td {
+    background: rgba(242, 177, 52, 0.10);
+}
+
+table td strong {
+    color: var(--dark-blue);
+}
+
+table td em {
+    color: var(--dark-blue-light);
+    font-size: 0.92rem;
+}
+
+/* --- Forms inside #sign-up --- */
+#sign-up form {
+    max-width: 720px;
+    margin: 1.5rem auto 0;
+    text-align: left;
+}
+
+#sign-up form > label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+#sign-up input[type="text"],
+#sign-up input[type="tel"],
+#sign-up input[type="email"],
+#sign-up input[type="password"],
+#sign-up input[type="number"],
+#sign-up input[type="date"],
+#sign-up select,
+#sign-up textarea {
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    margin-bottom: 1.1rem;
+    border: 1px solid #cfc6b8;
+    border-radius: 8px;
+    background: white;
+    color: var(--dark-blue);
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#sign-up input:focus,
+#sign-up select:focus,
+#sign-up textarea:focus {
+    outline: none;
+    border-color: var(--lighter-purple);
+    box-shadow: 0 0 0 3px rgba(162, 89, 196, 0.15);
+}
+
+#sign-up textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+#sign-up fieldset {
+    border: 1px solid #e0d7c8;
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1.4rem;
+    background: rgba(253, 246, 227, 0.5);
+}
+
+#sign-up legend {
+    font-weight: 700;
+    color: var(--purple);
+    padding: 0 0.5rem;
+    font-size: 1.02rem;
+}
+
+/* Radio / checkbox rows */
+#sign-up fieldset label {
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+#sign-up input[type="radio"],
+#sign-up input[type="checkbox"] {
+    accent-color: var(--lighter-purple);
+    width: 1.05rem;
+    height: 1.05rem;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#sign-up input[type="radio"] + label,
+#sign-up input[type="checkbox"] + label {
+    display: inline-block;
+    margin-right: 1.4rem;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    color: var(--dark-blue);
+}
+
+/* --- Submit / Reset buttons in sign-up forms --- */
+#sign-up input[type="submit"],
+#sign-up input[type="reset"] {
+    display: inline-block;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 0.6rem;
+    margin-top: 0.5rem;
+}
+
+#sign-up input[type="submit"] {
+    background: var(--lighter-purple);
+    color: white;
+    box-shadow: 0 4px 10px rgba(162, 89, 196, 0.2);
+}
+
+#sign-up input[type="submit"]:hover {
+    background: var(--purple);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(106, 44, 145, 0.3);
+}
+
+#sign-up input[type="reset"] {
+    background: #ddd4c4;
+    color: var(--dark-blue);
+}
+
+#sign-up input[type="reset"]:hover {
+    background: #c9bda9;
+}
+
+#sign-up input[type="submit"]:active,
+#sign-up input[type="reset"]:active {
+    transform: translateY(0);
+}
+
+/* --- Select optgroups --- */
+#sign-up optgroup {
+    font-weight: 700;
+    color: var(--purple);
+}
+
+#sign-up option {
+    font-weight: 400;
+    color: var(--dark-blue);
+    padding: 0.3rem;
+}
+
+footer {
+  background: var(--dark-blue);
+  color: white;
+  padding: 2.5rem 1.5rem 3rem;
+  text-align: center;
+}
+footer p {
+  margin-bottom: 0.5rem;
+  color: #cfd2e0;
+}
+
+footer#contact {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--bg-txt-light);
+}
+
+.email-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 2rem auto 0;
+    background-color: var(--bg);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.email-form {
+  max-width: 560px;
+  margin: 1.5rem auto 0;
+  text-align: left;
+  background: var(--bg);
+  padding: 1.5rem 2rem;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.email-form input[type="email"],
+.email-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.email-form input[type="email"],
+.email-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #3a3f5c;
+  border-radius: 8px;
+  background: white;
+  color: var(--dark-blue-light);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.email-form textarea {
+  resize: vertical;
+}
+
+.email-form input[type="submit"],
+.email-form input[type="reset"] {
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: var(--lighter-purple);
+  margin: auto 0;
+  text-align: left; 
+}
+
+.email-form input[type="submit"] {
+  background: var(--lighter-purple);
+  color: white;
+}
+
+.email-form input[type="submit"]:hover {
+  background: var(--purple);
+  transform: scale(1.05);
+}
+
+.email-form input[type="reset"] {
+  background: var(--lighter-purple);
+  color: white;
+  margin-left: 0.6rem;
+}
+
+.email-form input[type="reset"]:hover {
+  background: var(--purple);
+  transform: scale(1.05);
+}
+
+/* ---------- media queries ---------- */
+@media (max-width: 900px) {
+  .cards {
+    width: calc(50% - 1rem);
+  }
+
+  .cards.sign {
+    width: 100%;
+  }
+
+  #events aside {
+    float: none;
+    margin: 1rem auto;
+    max-width: 100%;
+  }
+
+  table {
+        font-size: 15px;
+    }
+
+    table th,
+    table td {
+        padding: 0.65rem 0.75rem;
+    }
+
+    table tbody th {
+        width: 22%;
+    }
+}
+
+@media (max-width: 620px) {
+  header {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+  }
+
+  header nav ul {
+    justify-content: center;
+    gap: 0.3rem 1rem;
+    padding-left: 0;
+    width: 100%;
+    padding: 0.5rem 0 0 0;
+  }
+
+  main {
+    padding: 1.5rem 0.9rem 3rem;
+  }
+
+  section {
+    padding: 1.5rem 1.1rem;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+  }
+
+  .cards {
+    width: 100%;
+    margin-right: 0;
+    min-width: 0;
+  }
+
+  .instruments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .instruments .cards {
+    width: 100%;
+    margin: 0;
+  }
+
+  figure:has(audio) {
+    padding: 1rem;
+    margin: 1.5rem 0.5rem;
+    box-sizing: border-box;
+    width: calc(100% - 1rem);
+  }
+
+  figure:has(audio) audio {
+    max-width: 100%;
+  }
+
+  .email-form {
+    padding: 1.2rem 1rem;
+  }
+
+  .email-form input[type="reset"] {
+    margin: 0.6rem 0 0;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: normal;
+    font-size: 14px;
+  }
+
+  #sign-up form {
+    padding: 0;
+  }
+
+  #sign-up fieldset {
+    padding: 0.9rem 1rem;
+  }
+
+  #sign-up input[type="submit"],
+  #sign-up input[type="reset"] {
+    width: 100%;
+    margin: 0.4rem 0 0;
+  }
+
+  .event-layout {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .event-sidebar {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .event-text-content {
+    width: 100%;
+  }
+
+  .cards {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    box-sizing: border-box;
+  }
+
+  #sign-up .cards {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+  }
+}
